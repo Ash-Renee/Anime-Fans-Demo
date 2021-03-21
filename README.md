@@ -1,2 +1,3 @@
 # Anime-Fans-Demo
-Demo of how to git gud with GitHub
+Updated the project to be the Coding Dojo assignments Books Authors with Templates
+
