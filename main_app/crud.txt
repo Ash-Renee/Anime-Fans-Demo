@@ -1,0 +1,87 @@
+from main_app.models import *
+
+Anime.objects.create(title="Death Note", desc="Book that kills people")
+Fans.objects.create(first_name="Light", last_name="Yagami")
+
+a_anime= Anime.objects.first()
+a_anime
+
+a_fan= Fans.objects.first()
+a_fan
+
+a_fan.liked_anime.all(a_anime)
+a_fan.liked_anime.all()
+
+a_anime.the_fans.remove(a_fan)
+a_anime.the_fans.all()
+
+Anime.objects.create(title="DragonBall", desc="Collect all the balls to win")
+Anime.objects.create(title="Fruits Basket", desc="A girl and a zodiac curse")
+Anime.objects.create(title="Miss Kobayashi's Dragon Maid", desc="A dragon gets horny for a human")
+Anime.objects.create(title="Devil Is A Part Timer", desc="Satan goes to work at a McDonalds")
+
+
+Fans.objects.create(first_name="Bulma", last_name="Capsule")
+Fans.objects.create(first_name="Tohru", last_name="Honda")
+Fans.objects.create(first_name="Kanna", last_name="Kamui")
+Fans.objects.create(first_name="Emilia", last_name="Yusa")
+
+change c sharp book to c# (changed death note to notebook and back)
+
+Anime_to_update=Anime.objects.get(id=1)
+Anime_to_update.title="Notebook"
+Anime_to_update.save()
+Anime.objects.first()
+
+
+a_fan1 = Fans.objects.get(id1)
+a_fan2 = Fans.objects.gert2
+a_fan3 = Fans.objects.get3
+a_fan4 = Fans.objects.get4
+a_fan5 = Fans.objects.get5
+
+a_anime1 = Anime.objects.gert1
+a_anime2 = Anime.objects.getr2
+a_anime3 = Anime.objects.get3
+a_anime4 = Anime.objects.get4
+a_anime5 = Anime.objects.get5
+
+a_fan1.liked_anime.get(id-1)
+a_fan1.liked_anime.get(id-2)
+
+a_fan2.liked_anime.get(id=1)
+a_fan2.liked_anime.get(id=3)
+a_fan2.liked_anime.get(id=4)
+
+a_fan3.liked_anime.get(id=1)
+a_fan3.liked_anime.get(id=3)
+a_fan3.liked_anime.get(id=4)
+a_fan3.liked_anime.get(id=5)
+
+a_fan4.liked_anime.get(id=1)
+a_fan4.liked_anime.get(id=3)
+a_fan4.liked_anime.get(id=4)
+a_fan4.liked_anime.get(id=5)
+a_fan4.liked_anime.get(id=6)
+
+
+a_anime3.the_fans.all()  //the middle is the related last_name  this gives us all the fans of A3
+
+a_anime3.the_fans.remove(a_fan1) //did not run, didn't want to delete anyone
+
+a_anime2.the_fans.add(a_fan5)
+
+a_fan3.liked_anime.all() //all the anime that #3 likes
+
+a_anime5.liked_anime.all()
+
+
+
+
+
+
+
+
+
+
+
