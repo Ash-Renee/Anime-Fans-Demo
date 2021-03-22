@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Fan</title>
+</head>
+
+<body>
+
+    <form action="/fans/new" method="post">
+        {% csrf_token %}
+        <h1>Add a Fan</h1>
+        <label for="first_name">First Name</label>
+        <input type="text" id="first_name" name="first_name">
+        <br>
+        <br>
+        <label for="last_name">Last Name</label>
+        <input type="text" id="last_name" name="last_name">
+        <br>
+        <br>
+        <textarea type="notes" name="notes"></textarea>
+        <br>
+        <br>
+        <input type="submit" value="Add">
+        
+    </form>
+    <table>
+        <style>
+            table, tr, td{
+                border: 2px solid blue;
+            }
+        </style>
+        <thead>
+            <tr>ID</tr>
+            <tr>First Name</tr>
+            <tr>Last Name</tr>
+            <tr>Notes</tr>
+        </thead>
+        <tbody>
+            {% for fans_names in fans %}
+            <tr>
+                <td>{{fans_names.id}}</td>
+                <td>{{fans_names.first_name}}</td>
+                <td>{{fans_names.last_name}}</td>
+                <td><a href="/fans_list/{{fans_names.id}}">View</a></td>
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+
+
+</body>
+
+</html>

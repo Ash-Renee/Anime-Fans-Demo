@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Anime</title>
+</head>
+
+<body>
+
+    <form action="/anime/new" method="post">
+        {% csrf_token %}
+        <h1>Add a Anime</h1>
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title">
+        <br>
+        <br>
+        <label for="description">Description</label>
+        <textarea type="description" name="desc"></textarea>
+        <br>
+        <br>
+        <input type="submit" value="Add">
+        
+
+
+        <br>
+        <br>
+        <br>
+
+    </form>
+    <table>
+        <style>
+            table, tr, td{
+                border: 2px solid blue;
+            }
+        </style>
+        <thead>
+            <tr>ID</tr>
+            <tr>Title</tr>
+            <tr>Description</tr>
+        </thead>
+        <tbody>
+            {% for anime in all_anime %}
+            <tr>
+                <td>{{anime.id}}</td>
+                <td>{{anime.title}}</td>
+                <td><a href="/anime/{{anime.id}}">View</a></td>
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+
+
+</body>
+
+</html>

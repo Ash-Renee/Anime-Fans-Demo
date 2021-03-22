@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fan Details</title>
+</head>
+
+<body>
+    <h1>{{the_fans.first_name}}</h1>
+    <h1>{{the_fans.last_name}}</h1>
+    <p>ID: {{the_fans.id}}</p>
+    <p>Notes: {{the_fans.notes}}</p>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>Liked Anime Shows:</h2>
+    <table>
+        <tbody>
+            {% for an_anime in the_fans.liked_anime.all %}
+            <tr>
+                <td>{{an_anime.title}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+
+
+    </table>
+    <form>
+        {% csrf_token %}
+        <select name="liked_anime" id="liked_anime">
+            {% for anime in liked_anime %}
+
+            <option value="{{liked_anime.id}}">{{anime.title}}</option>
+            {% endfor %}
+
+            <input type="submit" value="Add An Anime">
+
+
+        </select>
+
+    </form>
+
+    </form>
+</body>
+
+</html>
